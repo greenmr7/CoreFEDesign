@@ -25,21 +25,17 @@ $(document).ready(function () {
                     return meta.row + meta.settings._iDisplayStart + 1;
                 }
             },
-            {
-                "render": function (data, type, row) {
-                    return row.nm_car + '<br/><small>' + row.merkName + '</small>'
-                }
-            },
-            { "data": "year" },
-            { "data": "transmition" },
+            { "data": "nama" },
+            { "data": "alamat" },
+            { "data": "tlp" },
             {
                 "sortable": false,
                 "render": function (data, type, row) {
                     //console.log(row);
                     $('[data-toggle="tooltip"]').tooltip();
-                    return '<button class="btn btn-link btn-md btn-warning " data-placement="left" data-toggle="tooltip" data-animation="false" title="Edit" onclick="return GetById(' + row.id_car + ')" ><i class="fa fa-lg fa-edit"></i></button>'
+                    return '<button class="btn btn-link btn-md btn-warning " data-placement="left" data-toggle="tooltip" data-animation="false" title="Edit" onclick="return GetById(' + row.id_konsumen + ')" ><i class="fa fa-lg fa-edit"></i></button>'
                         + '&nbsp;'
-                        + '<button class="btn btn-link btn-md btn-danger" data-placement="right" data-toggle="tooltip" data-animation="false" title="Delete" onclick="return Delete(' + row.id_car + ')" ><i class="fa fa-lg fa-times"></i></button>'
+                        + '<button class="btn btn-link btn-md btn-danger" data-placement="right" data-toggle="tooltip" data-animation="false" title="Delete" onclick="return Delete(' + row.id_konsumen + ')" ><i class="fa fa-lg fa-times"></i></button>'
                 }
             }
         ]
@@ -49,8 +45,8 @@ $(document).ready(function () {
 function ClearScreen() {
     $('#Id').val('');
     $('#Name').val('');
-    $('#Year').val('');
-    $('#Transmisi').val('');
+    $('#Addrs').val('');
+    $('#Phone').val('');
     $('#update').hide();
     $('#add').show();
 }
@@ -62,11 +58,10 @@ function GetById(id) {
         data: { id: id }
     }).then((result) => {
         //debugger;
-        $('#Id').val(result.id_car);
-        $('#Name').val(result.nm_car);
-        $('#Year').val(result.year);
-        $('#Transmisi').val(result.transmition);
-        $('#MerkOption').val(result.merkID);
+        $('#Id').val(result.id_konsumen);
+        $('#Name').val(result.nama);
+        $('#Addrs').val(result.alamat);
+        $('#Phone').val(result.tlp);
         $('#add').hide();
         $('#update').show();
         $('#myModal').modal('show');
@@ -74,20 +69,19 @@ function GetById(id) {
 }
 
 function Save() {
-    //debugger;
-    var Car = new Object();
-    Car.nm_car = $('#Name').val();
-    Car.transmition = $('#Transmisi').val();
-    Car.year = $('#Year').val();
-    Car.merkID = $('#MerkOption').val();
+    debugger;
+    var Konsumen = new Object();
+    Konsumen.nama = $('#Name').val();
+    Konsumen.alamat = $('#Addrs').val();
+    Konsumen.tlp = $('#Phone').val();
     $.ajax({
         type: 'POST',
         url: "/konsumens/InsertOrUpdate/",
         cache: false,
         dataType: "JSON",
-        data: Car
+        data: Konsumen
     }).then((result) => {
-        //debugger;
+        debugger;
         if (result.statusCode == 200) {
             Swal.fire({
                 position: 'center',
@@ -105,18 +99,17 @@ function Save() {
 }
 
 function Update() {
-    var Car = new Object();
-    Car.id_car = $('#Id').val();
-    Car.nm_car = $('#Name').val();
-    Car.transmition = $('#Transmisi').val();
-    Car.year = $('#Year').val();
-    Car.merkID = $('#MerkOption').val();
+    var Konsumen = new Object();
+    Konsumen.id_konsumen = $('#Id').val();
+    Konsumen.nama = $('#Name').val();
+    Konsumen.alamat = $('#Addrs').val();
+    Konsumen.tlp = $('#Phone').val();
     $.ajax({
         type: 'POST',
         url: "/konsumens/InsertOrUpdate/",
         cache: false,
         dataType: "JSON",
-        data: Car
+        data: Konsumen
     }).then((result) => {
         //debugger;
         if (result.statusCode == 200) {

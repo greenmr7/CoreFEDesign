@@ -23,7 +23,7 @@ namespace Client.Controllers
         public JsonResult LoadKonsumen()
         {
             IEnumerable<Konsumen> konsumens = null;
-            var resTask = client.GetAsync("merks");
+            var resTask = client.GetAsync("konsumens");
             resTask.Wait();
 
             var result = resTask.Result;
@@ -45,7 +45,7 @@ namespace Client.Controllers
         public JsonResult GetById(int Id)
         {
             Konsumen konsumens = null;
-            var resTask = client.GetAsync("merks/" + Id);
+            var resTask = client.GetAsync("konsumens/" + Id);
             resTask.Wait();
 
             var result = resTask.Result;
@@ -72,12 +72,12 @@ namespace Client.Controllers
 
                 if (konsumens.id_konsumen == 0)
                 {
-                    var result = client.PostAsync("merks", byteContent).Result;
+                    var result = client.PostAsync("konsumens", byteContent).Result;
                     return Json(result);
                 }
                 else if (konsumens.id_konsumen == id_konsumen)
                 {
-                    var result = client.PutAsync("merks/" + id_konsumen, byteContent).Result;
+                    var result = client.PutAsync("konsumens/" + id_konsumen, byteContent).Result;
                     return Json(result);
                 }
 
@@ -91,7 +91,7 @@ namespace Client.Controllers
 
         public JsonResult Delete(int id)
         {
-            var result = client.DeleteAsync("merks/" + id).Result;
+            var result = client.DeleteAsync("konsumens/" + id).Result;
             return Json(result);
         }
     }
