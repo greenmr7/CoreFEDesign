@@ -19,6 +19,7 @@ D:\MII\MCCOC\#7-Templating\tugas\CoreFEDesign\Client\obj\Debug\netcoreapp2.1\Cli
 D:\MII\MCCOC\#7-Templating\tugas\CoreFEDesign\Client\obj\Debug\netcoreapp2.1\Client.TagHelpers.input.cache
 D:\MII\MCCOC\#7-Templating\tugas\CoreFEDesign\Client\obj\Debug\netcoreapp2.1\Client.TagHelpers.output.cache
 D:\MII\MCCOC\#7-Templating\tugas\CoreFEDesign\Client\obj\Debug\netcoreapp2.1\Client.RazorCoreGenerate.cache
+D:\MII\MCCOC\#7-Templating\tugas\CoreFEDesign\Client\obj\Debug\netcoreapp2.1\Razor\Views\Cars\Index.cshtml.g.cs
 D:\MII\MCCOC\#7-Templating\tugas\CoreFEDesign\Client\obj\Debug\netcoreapp2.1\Razor\Views\Home1\About.cshtml.g.cs
 D:\MII\MCCOC\#7-Templating\tugas\CoreFEDesign\Client\obj\Debug\netcoreapp2.1\Razor\Views\Home1\Contact.cshtml.g.cs
 D:\MII\MCCOC\#7-Templating\tugas\CoreFEDesign\Client\obj\Debug\netcoreapp2.1\Razor\Views\Home1\Index.cshtml.g.cs
@@ -39,3 +40,4 @@ D:\MII\MCCOC\#7-Templating\tugas\CoreFEDesign\Client\obj\Debug\netcoreapp2.1\Cli
 D:\MII\MCCOC\#7-Templating\tugas\CoreFEDesign\Client\obj\Debug\netcoreapp2.1\Client.dll
 D:\MII\MCCOC\#7-Templating\tugas\CoreFEDesign\Client\obj\Debug\netcoreapp2.1\Client.pdb
 D:\MII\MCCOC\#7-Templating\tugas\CoreFEDesign\Client\obj\Debug\netcoreapp2.1\Client.genruntimeconfig.cache
+D:\MII\MCCOC\#7-Templating\tugas\CoreFEDesign\Client\obj\Debug\netcoreapp2.1\Razor\Views\Konsumens\Index.cshtml.g.cs

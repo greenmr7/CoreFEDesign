@@ -4,82 +4,80 @@ using System.Linq;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Threading.Tasks;
-using API.ViewModels;
+using API.Models;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 
 namespace Client.Controllers
 {
-    public class CarsController : Controller
+    public class KonsumensController : Controller
     {
         readonly HttpClient client = new HttpClient
         {
             BaseAddress = new Uri("https://localhost:44339/api/")
         };
-
         public IActionResult Index()
         {
             return View();
         }
-
-        public JsonResult LoadCar()
+        public JsonResult LoadKonsumen()
         {
-            IEnumerable<CarVM> carVM = null;
-            var resTask = client.GetAsync("cars");
+            IEnumerable<Konsumen> konsumens = null;
+            var resTask = client.GetAsync("merks");
             resTask.Wait();
 
             var result = resTask.Result;
             if (result.IsSuccessStatusCode)
             {
-                var readTask = result.Content.ReadAsAsync<List<CarVM>>();
+                var readTask = result.Content.ReadAsAsync<List<Konsumen>>();
                 readTask.Wait();
-                carVM = readTask.Result;
+                konsumens = readTask.Result;
             }
             else
             {
-                carVM = Enumerable.Empty<CarVM>();
+                konsumens = Enumerable.Empty<Konsumen>();
                 ModelState.AddModelError(string.Empty, "Server Error try after sometimes.");
             }
-            return Json(carVM);
+            return Json(konsumens);
 
         }
 
         public JsonResult GetById(int Id)
         {
-            CarVM carVM = null;
-            var resTask = client.GetAsync("cars/" + Id);
+            Konsumen konsumens = null;
+            var resTask = client.GetAsync("merks/" + Id);
             resTask.Wait();
 
             var result = resTask.Result;
             if (result.IsSuccessStatusCode)
             {
                 var json = JsonConvert.DeserializeObject(result.Content.ReadAsStringAsync().Result).ToString();
-                carVM = JsonConvert.DeserializeObject<CarVM>(json);
+                konsumens = JsonConvert.DeserializeObject<Konsumen>(json);
             }
             else
             {
                 ModelState.AddModelError(string.Empty, "Server Error.");
             }
-            return Json(carVM);
+            return Json(konsumens);
         }
 
-        public JsonResult InsertOrUpdate(CarVM carVM, int id_car)
+        public JsonResult InsertOrUpdate(Konsumen konsumens, int id_konsumen)
         {
             try
             {
-                var json = JsonConvert.SerializeObject(carVM);
+                var json = JsonConvert.SerializeObject(konsumens);
                 var buffer = System.Text.Encoding.UTF8.GetBytes(json);
                 var byteContent = new ByteArrayContent(buffer);
                 byteContent.Headers.ContentType = new MediaTypeHeaderValue("application/json");
 
-                if (carVM.id_car == 0)
+                if (konsumens.id_konsumen == 0)
                 {
-                    var result = client.PostAsync("cars", byteContent).Result;
+                    var result = client.PostAsync("merks", byteContent).Result;
                     return Json(result);
                 }
-                else if (carVM.id_car == id_car)
+                else if (konsumens.id_konsumen == id_konsumen)
                 {
-                    var result = client.PutAsync("cars/" + id_car, byteContent).Result;
+                    var result = client.PutAsync("merks/" + id_konsumen, byteContent).Result;
                     return Json(result);
                 }
 
@@ -93,7 +91,7 @@ namespace Client.Controllers
 
         public JsonResult Delete(int id)
         {
-            var result = client.DeleteAsync("cars/" + id).Result;
+            var result = client.DeleteAsync("merks/" + id).Result;
             return Json(result);
         }
     }
