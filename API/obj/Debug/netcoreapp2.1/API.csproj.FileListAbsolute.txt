@@ -1,0 +1,17 @@
+D:\MII\MCCOC\#7-Templating\tugas\CoreFEDesign\API\bin\Debug\netcoreapp2.1\appsettings.Development.json
+D:\MII\MCCOC\#7-Templating\tugas\CoreFEDesign\API\bin\Debug\netcoreapp2.1\appsettings.json
+D:\MII\MCCOC\#7-Templating\tugas\CoreFEDesign\API\bin\Debug\netcoreapp2.1\Properties\launchSettings.json
+D:\MII\MCCOC\#7-Templating\tugas\CoreFEDesign\API\bin\Debug\netcoreapp2.1\API.deps.json
+D:\MII\MCCOC\#7-Templating\tugas\CoreFEDesign\API\bin\Debug\netcoreapp2.1\API.runtimeconfig.json
+D:\MII\MCCOC\#7-Templating\tugas\CoreFEDesign\API\bin\Debug\netcoreapp2.1\API.runtimeconfig.dev.json
+D:\MII\MCCOC\#7-Templating\tugas\CoreFEDesign\API\bin\Debug\netcoreapp2.1\API.dll
+D:\MII\MCCOC\#7-Templating\tugas\CoreFEDesign\API\bin\Debug\netcoreapp2.1\API.pdb
+D:\MII\MCCOC\#7-Templating\tugas\CoreFEDesign\API\obj\Debug\netcoreapp2.1\API.AssemblyInfoInputs.cache
+D:\MII\MCCOC\#7-Templating\tugas\CoreFEDesign\API\obj\Debug\netcoreapp2.1\API.AssemblyInfo.cs
+D:\MII\MCCOC\#7-Templating\tugas\CoreFEDesign\API\obj\Debug\netcoreapp2.1\API.csproj.CoreCompileInputs.cache
+D:\MII\MCCOC\#7-Templating\tugas\CoreFEDesign\API\obj\Debug\netcoreapp2.1\API.RazorAssemblyInfo.cache
+D:\MII\MCCOC\#7-Templating\tugas\CoreFEDesign\API\obj\Debug\netcoreapp2.1\API.RazorAssemblyInfo.cs
+D:\MII\MCCOC\#7-Templating\tugas\CoreFEDesign\API\obj\Debug\netcoreapp2.1\API.RazorTargetAssemblyInfo.cache
+D:\MII\MCCOC\#7-Templating\tugas\CoreFEDesign\API\obj\Debug\netcoreapp2.1\API.dll
+D:\MII\MCCOC\#7-Templating\tugas\CoreFEDesign\API\obj\Debug\netcoreapp2.1\API.pdb
+D:\MII\MCCOC\#7-Templating\tugas\CoreFEDesign\API\obj\Debug\netcoreapp2.1\API.genruntimeconfig.cache
