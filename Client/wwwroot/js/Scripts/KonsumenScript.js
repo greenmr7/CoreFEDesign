@@ -69,7 +69,7 @@ function GetById(id) {
 }
 
 function Save() {
-    debugger;
+    //debugger;
     var Konsumen = new Object();
     Konsumen.nama = $('#Name').val();
     Konsumen.alamat = $('#Addrs').val();
@@ -81,7 +81,7 @@ function Save() {
         dataType: "JSON",
         data: Konsumen
     }).then((result) => {
-        debugger;
+        //debugger;
         if (result.statusCode == 200) {
             Swal.fire({
                 position: 'center',

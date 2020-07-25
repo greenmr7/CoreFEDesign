@@ -11,7 +11,6 @@ $(document).ready(function () {
         "processing": true,
         "responsive": true,
         "pagination": true,
-        "stateSave": true,
         "ajax": {
             url: "/cars/LoadCar",
             type: "GET",
@@ -22,7 +21,8 @@ $(document).ready(function () {
             {
                 "data": "id",
                 render: function (data, type, row, meta) {
-                    return meta.row + meta.settings._iDisplayStart + 1;
+                    //return meta.row + meta.settings._iDisplayStart + 1;
+                    return meta.row + 1;
                 }
             },
             {
@@ -32,6 +32,10 @@ $(document).ready(function () {
             },
             { "data": "year" },
             { "data": "transmition" },
+            {
+                "data": "price",
+                'render': $.fn.dataTable.render.number(',', '.', 2, 'Rp '),
+            },
             {
                 "sortable": false,
                 "render": function (data, type, row) {
@@ -51,6 +55,7 @@ function ClearScreen() {
     $('#Name').val('');
     $('#Year').val('');
     $('#Transmisi').val('');
+    $('#Price').val('');
     $('#update').hide();
     $('#add').show();
 }
@@ -94,6 +99,7 @@ function GetById(id) {
         $('#Name').val(result.nm_car);
         $('#Year').val(result.year);
         $('#Transmisi').val(result.transmition);
+        $('#Price').val(result.price);
         $('#MerkOption').val(result.merkID);
         $('#add').hide();
         $('#update').show();
@@ -107,6 +113,7 @@ function Save() {
     Car.nm_car = $('#Name').val();
     Car.transmition = $('#Transmisi').val();
     Car.year = $('#Year').val();
+    Car.price = $('#Price').val();
     Car.merkID = $('#MerkOption').val();
     $.ajax({
         type: 'POST',
@@ -138,6 +145,7 @@ function Update() {
     Car.nm_car = $('#Name').val();
     Car.transmition = $('#Transmisi').val();
     Car.year = $('#Year').val();
+    Car.price = $('#Price').val();
     Car.merkID = $('#MerkOption').val();
     $.ajax({
         type: 'POST',
@@ -146,7 +154,7 @@ function Update() {
         dataType: "JSON",
         data: Car
     }).then((result) => {
-        //debugger;
+        debugger;
         if (result.statusCode == 200) {
             Swal.fire({
                 position: 'center',
@@ -164,6 +172,7 @@ function Update() {
 }
 
 function Delete(id) {
+    //debugger;
     Swal.fire({
         title: 'Are you sure?',
         text: "You won't be able to revert this!",

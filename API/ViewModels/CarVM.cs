@@ -11,6 +11,7 @@ namespace API.ViewModels
         public string nm_car { get; set; }
         public string transmition { get; set; }
         public int year { get; set; }
+        public int price { get; set; }
         public int merkID { get; set; }
         public string merkName { get; set; }
     }

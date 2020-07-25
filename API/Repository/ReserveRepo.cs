@@ -72,9 +72,15 @@ namespace API.Repository
         {
             using (SqlConnection connection = new SqlConnection(_configuration.GetConnectionString("myConn")))
             {
-                var procName = "SPEditCar";
+                var procName = "SPEditReserve";
                 parameters.Add("id", id);
-                parameters.Add("name", reserveVM.start_date);
+                parameters.Add("start", reserveVM.start_date);
+                parameters.Add("end", reserveVM.end_date);
+                parameters.Add("status", reserveVM.status);
+                parameters.Add("tot", reserveVM.total);
+                parameters.Add("tgl_bayar", reserveVM.tgl_bayar);
+                parameters.Add("carID", reserveVM.carID);
+                parameters.Add("konsumenID", reserveVM.konsumenID);
                 var Edit = connection.Execute(procName, parameters, commandType: CommandType.StoredProcedure);
                 return Edit;
             }

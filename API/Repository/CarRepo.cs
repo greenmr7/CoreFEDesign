@@ -27,6 +27,7 @@ namespace API.Repository
                 parameters.Add("Name", carVM.nm_car);
                 parameters.Add("transmition", carVM.transmition);
                 parameters.Add("year", carVM.year);
+                parameters.Add("price", carVM.price);
                 parameters.Add("merkID", carVM.merkID);
                 var insert = connection.Execute(procName, parameters, commandType: CommandType.StoredProcedure);
                 return insert;
@@ -74,6 +75,7 @@ namespace API.Repository
                 parameters.Add("name", carVM.nm_car);
                 parameters.Add("transmition", carVM.transmition);
                 parameters.Add("year", carVM.year);
+                parameters.Add("price", carVM.price);
                 parameters.Add("merkID", carVM.merkID);
                 var Edit = connection.Execute(procName, parameters, commandType: CommandType.StoredProcedure);
                 return Edit;
