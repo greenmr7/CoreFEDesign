@@ -9,7 +9,6 @@ D:\MII\MCCOC\#7-Templating\tugas\CoreFEDesign\Client\bin\Debug\netcoreapp2.1\Cli
 D:\MII\MCCOC\#7-Templating\tugas\CoreFEDesign\Client\bin\Debug\netcoreapp2.1\Client.Views.dll
 D:\MII\MCCOC\#7-Templating\tugas\CoreFEDesign\Client\bin\Debug\netcoreapp2.1\Client.Views.pdb
 D:\MII\MCCOC\#7-Templating\tugas\CoreFEDesign\Client\bin\Debug\netcoreapp2.1\API.dll
-D:\MII\MCCOC\#7-Templating\tugas\CoreFEDesign\Client\bin\Debug\netcoreapp2.1\API.pdb
 D:\MII\MCCOC\#7-Templating\tugas\CoreFEDesign\Client\obj\Debug\netcoreapp2.1\Client.csprojAssemblyReference.cache
 D:\MII\MCCOC\#7-Templating\tugas\CoreFEDesign\Client\obj\Debug\netcoreapp2.1\Client.AssemblyInfoInputs.cache
 D:\MII\MCCOC\#7-Templating\tugas\CoreFEDesign\Client\obj\Debug\netcoreapp2.1\Client.AssemblyInfo.cs
@@ -42,3 +41,4 @@ D:\MII\MCCOC\#7-Templating\tugas\CoreFEDesign\Client\obj\Debug\netcoreapp2.1\Cli
 D:\MII\MCCOC\#7-Templating\tugas\CoreFEDesign\Client\obj\Debug\netcoreapp2.1\Client.dll
 D:\MII\MCCOC\#7-Templating\tugas\CoreFEDesign\Client\obj\Debug\netcoreapp2.1\Client.pdb
 D:\MII\MCCOC\#7-Templating\tugas\CoreFEDesign\Client\obj\Debug\netcoreapp2.1\Client.genruntimeconfig.cache
+D:\MII\MCCOC\#7-Templating\tugas\CoreFEDesign\Client\bin\Debug\netcoreapp2.1\API.pdb

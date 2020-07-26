@@ -35,6 +35,7 @@ namespace API
             services.AddScoped<IKonsumen, KonsumenRepo>();
             services.AddScoped<ICar, CarRepo>();
             services.AddScoped<IReserve, ReserveRepo>();
+            services.AddScoped<ChartRepo>();
 
         }
 
