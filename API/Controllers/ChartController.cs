@@ -18,10 +18,19 @@ namespace API.Controllers
         {
             _chartRepo = chartRepo;
         }
+
         [HttpGet]
+        [Route("Pie")]
         public async Task<IEnumerable<PieChartVM>> GetPie()
         {
             return await _chartRepo.getPie();
+        }
+
+        [HttpGet]
+        [Route("Line")]
+        public async Task<IEnumerable<LineChartVM>> GetLine()
+        {
+            return await _chartRepo.getLine();
         }
     }
 }

@@ -23,8 +23,8 @@ namespace Client.Controllers
 
         public JsonResult LoadPieChart()
         {
-            IEnumerable<PieChartVM> reserveVM = null;
-            var resTask = client.GetAsync("chart");
+            IEnumerable<PieChartVM> pieCharts = null;
+            var resTask = client.GetAsync("chart/pie");
             resTask.Wait();
 
             var result = resTask.Result;
@@ -32,15 +32,35 @@ namespace Client.Controllers
             {
                 var readTask = result.Content.ReadAsAsync<List<PieChartVM>>();
                 readTask.Wait();
-                reserveVM = readTask.Result;
+                pieCharts = readTask.Result;
             }
             else
             {
-                reserveVM = Enumerable.Empty<PieChartVM>();
+                pieCharts = Enumerable.Empty<PieChartVM>();
                 ModelState.AddModelError(string.Empty, "Server Error try after sometimes.");
             }
-            return Json(reserveVM);
+            return Json(pieCharts);
+        }
 
+        public JsonResult LoadLineChart()
+        {
+            IEnumerable<LineChartVM> lineCharts = null;
+            var resTask = client.GetAsync("chart/line");
+            resTask.Wait();
+
+            var result = resTask.Result;
+            if (result.IsSuccessStatusCode)
+            {
+                var readTask = result.Content.ReadAsAsync<List<LineChartVM>>();
+                readTask.Wait();
+                lineCharts = readTask.Result;
+            }
+            else
+            {
+                lineCharts = Enumerable.Empty<LineChartVM>();
+                ModelState.AddModelError(string.Empty, "Server Error try after sometimes.");
+            }
+            return Json(lineCharts);
         }
 
         public IActionResult About()

@@ -87,7 +87,7 @@
 </div>
 
 <div class="row">
-    <div class="col-lg-12">
+    @*<div class="col-lg-12">
         <div class="card">
             <div class="card-header">
                 <div class="card-head-row">
@@ -110,30 +110,30 @@
             </div>
             <div class="card-body">
                 <div class="row">
-                    <div class="col-md-5">
-                        <div class="amChart" id="konsumenChart"></div>
+                    <div class="col-md-6">
+                        <div class="amChart" id="pieChart"></div>
                     </div>
-                    <div class="col-md-7">
-                        <div class="amChart" id="carChart"></div>
+                    <div class="col-md-12">
+                        <div class="amChart" id="lineChart"></div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+    </div>*@
 
-    @*<div class="col-md-5">
+    <div class="col-lg-12">
         <div class="card">
             <div class="card-header">
                 <div class="card-head-row">
-                    <div class="card-title">Konsumen</div>
+                    <div class="card-title">Car</div>
                     <div class="card-tools">
-                        <button class="btn btn-info btn-border btn-round btn-sm mr-2" onclick="exportXLSKonsumen();">
+                        <button class="btn btn-info btn-border btn-round btn-sm mr-2" onclick="exportXLS();">
                             <span class="btn-label">
                                 <i class="fa fa-pencil-alt"></i>
                             </span>
                             XLSX
                         </button>
-                        <button class="btn btn-info btn-border btn-round btn-sm mr-2" onclick="exportPDFKonsumen();">
+                        <button class="btn btn-info btn-border btn-round btn-sm mr-2" onclick="exportPDF();">
                             <span class="btn-label">
                                 <i class="fa fa-print"></i>
                             </span>
@@ -143,20 +143,20 @@
                 </div>
             </div>
             <div class="card-body">
-                <div class="amChart" id="konsumenChart"></div>
+                <div class="amChart" id="pieChart"></div>
             </div>
         </div>
-    </div>*@
-    @*<div class="col-md-7">
+    </div>
+    <div class="col-lg-12">
         <div class="card">
             <div class="card-header">
-                <div class="card-title">User Statistics</div>
+                <div class="card-title">Car Used</div>
             </div>
             <div class="card-body">
-                <div class="amChart" id="carChart"></div>
+                <div class="amChart" id="lineChart"></div>
             </div>
         </div>
-    </div>*@
+    </div>
 
 </div>
 

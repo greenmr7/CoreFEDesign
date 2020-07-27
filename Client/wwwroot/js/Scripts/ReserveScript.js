@@ -198,9 +198,32 @@ function GetById(id) {
         $('#Total').val(result.total);
 
         var getBayar = new Date(result.tgl_bayar);
-        var dateBayar = getBayar.getFullYear() + '-' + ("0" + (getBayar.getMonth() + 1)).slice(-2) + '-' + ("0" + getBayar.getDate()).slice(-2);
+        var cek = getBayar.getFullYear() + '-' + ("0" + (getBayar.getMonth() + 1)).slice(-2) + '-' + ("0" + getBayar.getDate()).slice(-2);
+        if (cek != "2000-01-01") {
+            var dateBayar = getBayar.getFullYear() + '-' + ("0" + (getBayar.getMonth() + 1)).slice(-2) + '-' + ("0" + getBayar.getDate()).slice(-2);
+        } else {
+            var newDate = new Date();
+            var dateBayar = newDate.getFullYear() + '-' + ("0" + (newDate.getMonth() + 1)).slice(-2) + '-' + ("0" + newDate.getDate()).slice(-2);
+        }
         $('#Bayar').val(dateBayar);
         $('#CarOption').val(result.carID);
+        $('#CarOption').on('change', function () {
+            $('#totalCol').show();
+            //alert(this.value);
+            var start = new Date($('#Start').val());
+            var end = new Date($('#End').val());
+            var diff = new Date(end - start);
+            var days = diff / 1000 / 60 / 60 / 24;
+            //alert(days);
+            $.ajax({
+                url: "/cars/GetById/",
+                data: { id: this.value }
+            }).then((result) => {
+                var tot = parseInt(result.price * days);
+                var total = $('#Total').val(tot);
+
+            })
+        });
         $('#KonsumenOption').val(result.konsumenID);
         $('#endCol').show();
         $('#totalCol').show();

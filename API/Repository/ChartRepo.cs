@@ -27,5 +27,15 @@ namespace API.Repository
                 return getAll;
             }
         }
+
+        public async Task<IEnumerable<LineChartVM>> getLine()
+        {
+            using (SqlConnection connection = new SqlConnection(_configuration.GetConnectionString("myConn")))
+            {
+                var procName = "SPLineChart";
+                var getAll = await connection.QueryAsync<LineChartVM>(procName, commandType: CommandType.StoredProcedure);
+                return getAll;
+            }
+        }
     }
 }
